@@ -2,10 +2,8 @@ package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Application {
     static boolean run = true;
@@ -89,9 +87,6 @@ public class Application {
     private static String checkCount(List<Integer> computer , String answer){
         int strike=0;
         int ball = 0;
-
-
-        System.out.println(checkAnswer(answer));
         if(!checkAnswer(answer)){
             throw  new IllegalArgumentException();
         }
