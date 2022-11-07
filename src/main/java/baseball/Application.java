@@ -11,7 +11,6 @@ public class Application {
     static boolean run = true;
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-//        run(args);
 
         String result = "";
         List<Integer> computer = new ArrayList<>();
@@ -30,10 +29,6 @@ public class Application {
             String answer = Console.readLine();
             System.out.println(answer);
 
-            if (!checkAnswer(answer)) {
-                System.out.println("값 양식 확인!");
-                return;
-            }
 
             result = checkCount(computer, answer);
             System.out.println(result);
@@ -94,6 +89,13 @@ public class Application {
     private static String checkCount(List<Integer> computer , String answer){
         int strike=0;
         int ball = 0;
+
+
+        System.out.println(checkAnswer(answer));
+        if(!checkAnswer(answer)){
+            throw  new IllegalArgumentException();
+        }
+
         for(int i=0; i<computer.size(); i++){
             char answerChar = answer.charAt(i);
             int answerCharInt = answerChar-'0';
